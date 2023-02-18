@@ -1,0 +1,46 @@
+
+apply plugin: 'maven-publish'
+apply from: 'constants.gradle'
+
+afterEvaluate {
+
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = "$mavenGroup"
+                artifactId = "$mavenArtifactId"
+                version = "$mavenVersion"
+
+                artifact androidSourcesJar
+
+                pom {
+                    name = "$projectName"
+                    description = "$projectDesc"
+                    licenses {
+                        license {
+                            name = 'The Apache Software License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                            distribution = 'repo'
+                        }
+                    }
+                    developers {
+                        developer {
+                            name = 'Google'
+                        }
+                    }
+                    scm {
+                        connection = "${githubUrl}.git"
+                        url = githubUrl
+                    }
+                }
+            }
+        }
+    }
+}
+
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
+}

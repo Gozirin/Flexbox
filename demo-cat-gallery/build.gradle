@@ -1,0 +1,33 @@
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.google.android.flexbox.apps.catgallery"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ":flexbox")
+    implementation "androidx.appcompat:appcompat:${rootProject.androidxAppCompatVersion}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.androidxRecyclerViewVersion}"
+    implementation "com.google.android.material:material:${rootProject.materialVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${rootProject.kotlinVersion}"
+}

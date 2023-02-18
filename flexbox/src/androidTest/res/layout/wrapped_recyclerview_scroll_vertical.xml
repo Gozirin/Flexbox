@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Some APIs in espresso requires the view being performed is at least 90% visible to the
+     user, using the small width so that low resolution devices are covered-->
+<FrameLayout android:id="@+id/container"
+             xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="320dp"
+             android:layout_height="240dp">
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerview"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="600dp"/>
+</FrameLayout>
+

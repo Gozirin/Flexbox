@@ -1,0 +1,13 @@
+
+ext {
+    projectName = 'flexbox-layout'
+    projectDesc = 'Flexbox for Android'
+
+    githubUrl = 'https://github.com/google/flexbox-layout'
+
+    mavenGroup = 'com.google.android.flexbox'
+    mavenArtifactId = 'flexbox'
+    mavenVersion = '3.0.0'
+
+    bintrayOrg = 'google'
+}

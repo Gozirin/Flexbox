@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flexbox_layout"
+    android:layout_width="100dp"
+    android:layout_height="20dp"
+    app:flexDirection="column">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="20dp"
+        android:text="1"
+        app:layout_alignSelf="center" />
+
+</com.google.android.flexbox.FlexboxLayout>
